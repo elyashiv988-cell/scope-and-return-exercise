@@ -3,13 +3,31 @@
 # 3 the function printed 30 ((5+10)*2), the volue coins printed 20. 
 # 4 the function printed 70 (100-30), 35(30+5). out of function the value health printed 100. 
 # 5 both printed ['map', 'key', 'torch', 'coin'] because when the function called <items> (list) it isn't copy the varible but just points the index of items in the memory so when we change items the memory has changed. 
-# 6 
-items = ["map", "key"]
+# 6 the function printed ["potion","shield"] because we create a new varible items in the function but the global doesn't change. so the glibal items printed ["map", "key"]
+# 7 both printed 20 because the command 'global' overright the global value point
+# 8 the function runs form inside to outside and the value status run only in the score,so firest def inner printed running, secend def outer printed ready, therd the global value status printed waiting. 
+# 9 def inner takes and over right the coins from def outer (bt the commend 'non local'). so def inner and def outer printed 16, but the global coins doesn't chande so it prints 10. 
+# 10 
 
-def replace_items():
-    items = ["potion"]
-    items.append("shield")
-    print(items)
+score = 1
+bag = ["key"]
 
-replace_items()
-print(items)
+def outer():
+    score = 10
+    bag.append("map")
+
+    def inner():
+        nonlocal score
+        score = score + 5
+        bag.append("coin")
+        print(score)
+        print(bag)
+
+    score = score * 2
+    inner()
+    print(score)
+    print(bag)
+
+outer()
+print(score)
+print(bag)
