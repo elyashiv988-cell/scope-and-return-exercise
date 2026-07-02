@@ -58,5 +58,24 @@ def print_result(temp):
 fahernheit=convert_temp(29)
 print(print_result(fahernheit))
 
+# 5 game health valvulator
+
+
+# 6 shopping bag total
+
+def sum_products(a,b,c):
+    total=0
+    total+=a
+    total+=b
+    total+=c
+    return total
+def discount_price(price):
+    return total-(total/100*20)
+
+total=sum_products(20,50,100)
+print(discount_price(total))
+
+    
+
 
 
