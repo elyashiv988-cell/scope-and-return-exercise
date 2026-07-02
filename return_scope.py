@@ -60,6 +60,16 @@ print(print_result(fahernheit))
 
 # 5 game health valvulator
 
+def take_damage(health,damage):
+    return health-damage
+
+def adding_healing(health,healing):
+    return health+healing
+
+health_after_dange=take_damage(100)
+final_health=adding_healing(health_after_dange)
+print(final_health)
+
 
 # 6 shopping bag total
 
@@ -74,6 +84,8 @@ def discount_price(price):
 
 total=sum_products(20,50,100)
 print(discount_price(total))
+
+
 
     
 
